@@ -51,7 +51,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "14" # Adjust the Node.js version as needed
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
@@ -60,7 +60,7 @@ jobs:
       - name: Copy built files to artifact directory
         run: cp -r .next out/.next
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: nextjs-artifact
           path: ./out
@@ -77,8 +77,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Configure Pages
-        uses: actions/configure-pages@v4
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: nextjs-artifact
+          path: out
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
