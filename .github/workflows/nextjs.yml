@@ -61,7 +61,7 @@ jobs:
       - name: Copy built files to artifact directory
         run: cp -r .next out/.next
       - name: Upload artifact
-        uses: actions/upload-pages-artifact
+        uses: actions/upload-artifact@v4
         with:
           name: nextjs-artifact
           path: ./out
@@ -76,4 +76,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages
+        uses: actions/deploy-pages@v4
