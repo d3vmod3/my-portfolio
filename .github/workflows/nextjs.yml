@@ -61,7 +61,7 @@ jobs:
       - name: Copy built files to artifact directory
         run: cp -r .next out/.next
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: nextjs-artifact
           path: ./out
