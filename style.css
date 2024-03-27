@@ -1,0 +1,5 @@
+.image-intro {
+  background-image: url("./assets/images/intro-pic.jpeg");
+  background-size: cover;
+  background-position: center;
+}
