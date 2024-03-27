@@ -1,7 +1,4 @@
-// JavaScript code to render HTML
-window.onload = function () {
-  // HTML content to render
-  var htmlContent = `
+var htmlContent = `
     <div class="container mx-auto p-0">
       <div class="navbar bg-base-100">
         <div class="navbar-start">
@@ -45,10 +42,5 @@ window.onload = function () {
       </div>
     </div>
     `;
-
-  // Get the container element
-  var navContaniner = document.getElementById("navContaniner");
-
-  // Set the HTML content of the container
-  navContaniner.innerHTML = htmlContent;
-};
+var navContaniner = document.getElementById("navContaniner");
+navContaniner.innerHTML = htmlContent;
